@@ -696,7 +696,7 @@ a是anchor的缩写，意为锚。
 
   	- name属性后面的值是自定义的
 
-  	- radio（或者checkbox）如果是一组，必须给他们命名相同的名字
+  	- <u>radio（或者checkbox）如果是一组，必须给他们命名相同的名字</u>
 
   		```html
   		<input type="radio" name="sex" />男
@@ -708,8 +708,162 @@ a是anchor的缩写，意为锚。
   3. **checked**属性主要针对于**单选按钮**和**复选框**，主要作用：一打开页面，就默认选中某个表单元素
 
   4. maxlength是用户可以在表单元素输入的最大字符数，一般较少使用
+  
+  5. 设置 `type` 的值为 `submit`，点击按钮后可以把表单域 form 里面的表单元素里面的值提交给后台。
+  
+  6. 设置 `type="button"`，普通按钮，后期结合 js 使用
+
+
+
+##### 3.4.2 `<label>`标签
+
+`<label>` 标签为 input 元素定义标注。 
+`<label>` 标签用于绑定一个表单元素，当点击 label 标签内的文本时，浏览器自动将焦点（光标）转到或者选择对应的表单元素上，提升用户体验。 **语法：**
+
+```html
+<label for="sex">男</label>
+<input type="radio" name="sex" id="sex" />
+```
+
+核心：`<label>`标签的**for属性**应当与相关元素的**id属性相同**。
+
+
+
+##### 3.4.3 `<select>`表单元素
+
+`select` 标签设置多个选项让用户选择，节约页面空间。 **语法**：
+
+```html
+<select>
+    <option>选项1</option>
+    <option>选项2</option>
+    <option>选项3</option>
+    ...
+</select>
+```
+
+1. select 中至少包含一对 option。
+2. 在 `<option>` 中定义属性`selected="selected"`，当前项即为默认选项。
+
+
+
+##### 3.4.4 `<textarea>`表单元素
+
+场景：输入内容较多时。
+
+```html
+<textarea rows="3" cols="20">
+    文本内容
+</textarea>
+```
+
+cols="每行中的字符数"，rows="显示的行数"，实际开发中不会使用，都是用CSS来改变大小。
+
+
 
 ### 4. 综合案例
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例-注册页面</title>
+</head>
+<body>
+    <h4>青春不常在，抓紧谈恋爱</h4>
+    <table width="600">
+        <tr>
+            <td>性别</td>
+            <td>
+                <input type="radio" name="gender" id="man"> <label for="man"><img src="男.png" width="20"> 男</label>
+                <input type="radio" name="gender" id="woman"> <label for="woman"><img src="女.png" width="20"> 女</label>
+            </td>
+        </tr>
+        <tr>
+            <td>生日：</td>
+            <td>
+                <select>
+                    <option>--请选择年份--</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                </select>
+                <select>
+                    <option>--请选择月份--</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <select>
+                    <option>--请选择日期--</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>所在地区</td>
+            <td>
+                <input type="text" value="广州">
+            </td>
+        </tr>
+        <tr>
+            <td>婚姻状况</td>
+            <td>
+                <label for="married"><input type="radio" name="marry" id="married" checked="checked"> 已婚</label>  <label for="spinsterhood"><input type="radio" name="marry" id="spinsterhood"> 未婚</label>  <label for="divorced"><input type="radio" name="marry" id="divorced">离婚</label>
+            </td>
+        </tr>
+        <tr>
+            <td>学历</td>
+            <td><input type="text" value="本科"></td>
+        </tr>
+        <tr>
+            <td>喜欢的类型</td>
+            <td>
+                <label for="180"><input type="checkbox" name="like" id="180"> 180</label>
+                <label for="奶狗"><input type="checkbox" name="like" id="奶狗"> 奶狗</label>
+                <label for="霸总"><input type="checkbox" name="like" id="霸总"> 霸总</label>
+                <label for="肌肉男"><input type="checkbox" name="like" id="肌肉男"> 肌肉男</label>
+            </td>
+        </tr>
+        <tr>
+            <td>个人介绍</td>
+            <td>
+                <textarea></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="免费注册"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="checkbox" checked="checked"> 我同意注册条款和加入会员标准</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="#">我是会员，立即登录</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <h5>我承诺</h5>
+                <ul>
+                    <li>年满18岁、单身</li>
+                    <li>抱着严肃的态度</li>
+                    <li>真诚寻找另一半</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+```
 
 
 
