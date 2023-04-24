@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,4 +22,34 @@
 
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript 函数序列</h2>
+
+<p>JavaScript 函数按照它们被调用的顺序执行。</p>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+function myFirst() {
+  myDisplayer("Hello");
+}
+
+function mySecond() {
+  myDisplayer("Goodbye");
+}
+
+mySecond();
+myFirst();
+</script>
+
+</body>
 </html>

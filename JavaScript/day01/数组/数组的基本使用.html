@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1, 2, 'pink', true]
+        let arr2 = new Array(1, 2, 3, 4)
+        console.log(arr)
+        console.log(arr2)
+
+        let a = [2, 6, 1, 7, 4]
+        let sum = 0
+        for (let i = 0; i < a.length; i++) {
+            // console.log(a[i])
+            sum += a[i]
+        }
+        console.log(`数组的和是：${sum}`)
+
+        let arr3 = ['html', 'css', 'javascript']
+        arr3.push('NOdejs')
+        console.log(arr3)
+        arr3.unshift('vscode')
+        console.log(arr3)
+        arr3.splice(2, 1) //从索引值为2的位置开始删除一个单元
+        console.log(arr3)
+        arr3.pop()
+        console.log(arr3)
+        arr3.shift()
+        console.log(arr3)
+
+    </script>
+</body>
+</html>
